@@ -25,18 +25,18 @@ import {
 	editIcon
 } from './views/helpers/hbs.js';
 import logEvents from './logEvents.js';
+import { router as homeRouter } from './controller/routes/home.js';
 import { router as routes } from './controller/routes/routes.js';
 import { router as authRoutes } from './controller/routes/auth.js';
 import { router as storiesRoutes } from './controller/routes/stories.js';
 
-// Config loader
+// Config loaders
 dotenv.config({ path: './config/config.env' });
 passportConfig(passport);
+mommasDB();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-mommasDB();
 
 const app = express();
 
@@ -112,7 +112,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public/src/img', 'favicon.ico')));
 
 // Routes
-app.use('/', routes);
+app.use('/', homeRouter);
+app.use('/login', routes);
 app.use('/auth', authRoutes);
 app.use('/stories', storiesRoutes);
 
@@ -134,13 +135,17 @@ const openBrowser = async () => {
 };
 openBrowser();
 
+// Logging Events
 class TrackEmitter extends EventEmitter {}
 const trackEmitter = new TrackEmitter();
 trackEmitter.on('log', message => {
 	logEvents(message);
 });
 setTimeout(() => {
-	trackEmitter.emit('log', 'Nodemon Server Log initiated: "EVENT EMITTED"');
+	trackEmitter.emit(
+		'log',
+		'Nodemon Server Logging initiated: "EVENT EMITTED"'
+	);
 	console.log(new Date());
 });
 

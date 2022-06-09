@@ -1,3 +1,4 @@
+
 p {
 	margin: 10px 0 !important;
 }
@@ -19,4 +20,21 @@ p {
 
 .img-small {
 	width: 180px;
+}
+
+.girl-chair {
+    margin: 0.5vh 0 0 2vw !important;
+    width: 8%;
+	min-width: 85px;
+    top: 0.5vh;
+    right: -40vw;
+    position: relative;
+    border-radius: 18px;   
+    aspect-ratio: 201 / 284;
+    rotate: 12deg;
+
+
+}
+.sidenav-trigger {
+	margin: 7vh 5vw 0 -3vw !important;
 }

@@ -8,7 +8,7 @@ export const router = express.Router();
 
 // @desc  Login/Landing page
 // @route GET /
-router.get('/', ensureGuest, (req, res) => {
+router.get('/login', ensureGuest, (req, res) => {
 	res.render('login', {
 		layout: 'login'
 	});
