@@ -1,0 +1,39 @@
+{
+	"parser": "babel-eslint",
+	"env": {
+		"node": true,
+		"browser": true,
+		"jest": true,
+		"es2021": true,
+		"es6": true
+	},
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaVersion": 13,
+		"sourceType": "module",
+		"jsx": false,
+		"modules": true
+	},
+
+	"plugins": ["jest", "eslint-plugin-html"],
+	"settings": {
+		"html/html-extensions": [".html", ".handlebars", ".hbs"]
+	},
+	"rules": {
+		"jest/valid-describe-callback": "warn",
+		"jest/valid-expect-in-promise": "warn",
+		"jest/valid-expect": "warn",
+		"no-extra-boolean-cast": 0,
+		"no-const-assign": "warn",
+		"no-this-before-super": "warn",
+		"no-unreachable": "warn",
+		"no-unused-vars": "warn",
+		"constructor-super": "warn",
+		"valid-typeof": "warn",
+		"quotes": [2, "single", { "allowTemplateLiterals": true }]
+	},
+	"ignorePatterns": [
+		"utils/qa/lighthouse/*.js",
+		"utils/qa/lighthouse/*.js, *.md, *pdf"
+	]
+}
