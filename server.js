@@ -40,9 +40,10 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// body-parser
+// body-parser...
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 // Method-override
 app.use(
@@ -60,8 +61,6 @@ app.use(
 if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev'));
 }
-
-app.use(cors());
 
 // Handlebars Template Middleware
 const handlebars = create({
@@ -121,7 +120,7 @@ const PORT = process.env.PORT || 9080;
 const HOST = process.env.HOST || `127.0.0.1`;
 
 app.listen(PORT, () => {
-	console.log(
+	console.info(
 		`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`
 	);
 });

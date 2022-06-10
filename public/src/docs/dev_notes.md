@@ -33,4 +33,5 @@
             npm i puppeteer-core -D
             npm i puppeteer -G 
             npm i -D cross-env
+            npm i -D supertest
 <!--  -->
