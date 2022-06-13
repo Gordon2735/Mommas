@@ -22,7 +22,11 @@ const T_homeRoute = url => {
 			response.headers['content-type']
 		).toContain('text/html');
 		const responseStatus = expect(response.statusCode).toBe(200);
-		console.log(`${responseHeader} and ${responseStatus}`);
+		console.log(`${responseHeader} and ${responseStatus}
+		The response headers are: ${response.headers}
+		The response status is: ${response.statusCode}
+		The Homepage route has been tested
+		`);
 	});
 };
 
