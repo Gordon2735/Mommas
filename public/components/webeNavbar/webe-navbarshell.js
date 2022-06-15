@@ -2,14 +2,16 @@
 
 import { RenderNavbarTemplate } from './webe-navbar_renderer.js';
 import { sharedStyles } from './sharedStyles.js';
-import './webe-navbar.js';
 import { setAttributes } from './tools/navbar_utilities.js';
 
 const head = document.querySelector('head');
 const script = document.createElement('script');
 setAttributes(script, {
 	type: 'module',
-	src: '/components/webeNavbar/webe-navbar.js'
+	src: '/components/webeNavbar/webe-navbar.js',
+	content: 'text/javascript',
+	alt: 'webe-navbar',
+	crossorigin: 'anonymous'
 });
 
 export class WebeNavbarShell extends RenderNavbarTemplate {
@@ -35,15 +37,6 @@ export class WebeNavbarShell extends RenderNavbarTemplate {
             <style>
                 ${sharedStyles.global}
             </style>
-
-			
-	
-		<h1 class="title-h1">Coming Soon !</h1>
-
-		<h4 class="title-h4">  Dresses <div class="section-sign">&#936;</div> made just the way they ought to be!</h4>
-
-		  <img class="curtsy-img" src="/components/homePage/images/summers_IMG/curtsy_girl_2.png" alt="curtsy" />
-		  <img class="marys-lamb" src="/components/homePage/images/summers_IMG/marys_lamb.png" alt="Mary's beautiful dress and her little lamb!" />
 		`;
 	}
 }

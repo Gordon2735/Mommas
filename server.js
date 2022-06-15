@@ -106,6 +106,7 @@ app.use(function (req, res, next) {
 
 // static folders
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'controller')));
 
 // favicon
 app.use(favicon(path.join(__dirname, 'public/src/img', 'favicon.ico')));

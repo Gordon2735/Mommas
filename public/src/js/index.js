@@ -1,25 +1,23 @@
 'use strict';
 
-import appendChildren, {
-	setAttributes,
-	renderArray
-} from './tools/utility_functions.js';
+import { setAttributes } from './tools/utility_functions.js';
 
 const init = async () => {
 	const head = document.querySelector('head');
-	const navbarShellScript = document.createElement('script');
-	const webeNavbarShell = document.createElement('webe-navbarshell');
-	await setAttributes(navbarShellScript, {
+	const indexPrimerScript = document.createElement('script');
+	setAttributes(indexPrimerScript, {
 		type: 'module',
-		src: '/components/webeNavbar/webe-navbarshell.js',
-		content: 'text/javascript'
+		src: '/state/indexPrimer.js',
+		content: 'text/javascript',
+		crossorigin: 'anonymous',
+		alt: 'indexPrimer'
 	});
-	await setAttributes(webeNavbarShell, {
-		class: 'navbar-shell',
-		id: 'navbar-shell',
-		src: '/components/webeNavbar/webe-navbarshell.js'
-	});
-	await appendChildren(head, navbarShellScript);
+	head.appendChild(indexPrimerScript);
+
+	console.info(
+		`%c The indexPrimer script has || **FIRED** || and is now loaded`,
+		`background: #000; color: #bada55; font-size: 1.2em;`
+	);
 };
 
 window.addEventListener('DOMContentLoaded', init);

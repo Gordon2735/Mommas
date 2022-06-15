@@ -1,7 +1,7 @@
 {
   "name": "mommas",
   "version": "1.0.0",
-  "description": "Momma's Dress Retail Site by Donna G. Mullen",
+  "description": "Summer's Dress Retail Site by Donna G. Mullen",
   "type": "module",
   "main": "server.js",
   "directories": {

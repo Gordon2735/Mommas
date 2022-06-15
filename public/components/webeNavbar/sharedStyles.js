@@ -2,16 +2,16 @@
 
 const sharedStyles = {};
 
-sharedStyles.err = `
-    html {
-        background: hsl(350, 100%, 88%);
-    }
+// sharedStyles.err = `
+//     html {
+//         background: hsl(350, 100%, 88%);
+//     }
 
-    body {
-        width: 100%;
-        min-height: 100vh;
-    }
-`;
+//     body {
+//         width: 100%;
+//         min-height: 100vh;
+//     }
+// `;
 
 sharedStyles.global = `
     
@@ -36,61 +36,10 @@ sharedStyles.global = `
     .body {
         width: 100%;
         min-height: 100vh;
-    }
-    
-    .title-h1 {
-        margin: 15vh auto 0 auto;
-        font-family: var(--ff-title);
-        font-weight: var(--fw-bold);
-        font-size: 8.4rem !important;
-        color: var(--fc-secondary-clr);
-        letter-spacing: 1.0vw !important;
-        text-shadow: 2px 1px 2px rgb(165, 164, 164),
-                    2px 4px 6px rgba(27, 27, 27, 0.5);
-    }
-    
-    .title-h4 {
-        margin: 7vh 0 0 0;
-        font-family: var(--ff-title);
-        font-weight: var(--fw-normal);
-        font-size: 3.051rem !important;
-        color: var(--fc-quaternary-clr);
-        letter-spacing: 0.7vw !important;
-        text-shadow: 2px 1px 2px rgb(165, 164, 164),
-                    2px 4px 6px rgba(27, 27, 27, 0.5);
-    }
-    
-    .section-sign {
-        margin: 0 0 0 0 !important;
-        position: inline-block !important;
-        font-size: 0.9rem !important;
-    }
-    
-    .curtsy-img {
-        margin: 5vh 0vw 0 2vw;
-        width: 15%;
-        /* min-width:110px; */
-        left: -34vw !important;
-        top: -43vh;
-        position: relative;
-        border-radius: 18px;
-        box-shadow: 12px 9px 19px hsla(0, 0%, 4%, 0.438);
-        aspect-ratio: 274 / 400;
-        rotate: -5deg;
-    
-    }
-    
-    .marys-lamb {
-        margin: 5vh 0vw 0 2vw;
-        width: 15%;
-        right: -32vw !important;
-        top: -43vh;
-        position: relative;
-        border-radius: 18px;
-        box-shadow: 12px 9px 19px hsla(0, 0%, 4%, 0.438);
-        aspect-ratio: 274 / 400;
-        rotate: 5deg;
-    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 `;
 
@@ -170,6 +119,7 @@ sharedStyles.navbar = `
         background-color: white;
         border-radius: 10px;
     }
+
     .girl-chair {
         margin: 0vh 1vw 0 9vw ;
         padding: 0 -1vw 0 0;
@@ -182,7 +132,7 @@ sharedStyles.navbar = `
         aspect-ratio: 201 / 284;
         rotate: 12deg;
     }
-
+   
     @media (max-width: 800px) {
         .navbar {
             flex-direction: column;
@@ -229,10 +179,6 @@ sharedStyles.navbar = `
             rotate: 12deg;
         }
     }
-`;
-
-sharedStyles.footer = `
-
 `;
 
 export { sharedStyles };

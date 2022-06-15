@@ -70,7 +70,7 @@ const init = () => {
 	setAttributes(aLogin, {
 		class: 'a-links',
 		id: 'a-login',
-		href: '#'
+		href: '/login'
 	});
 	setAttributes(chairImg, {
 		class: 'girl-chair',

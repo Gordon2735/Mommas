@@ -25,3 +25,10 @@ p {
 .sidenav-trigger {
 	margin: 7vh 5vw 0 -3vw !important;
 }
+
+.navbar-shell {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    justify-self: start;
+}
