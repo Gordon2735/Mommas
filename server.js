@@ -2,6 +2,7 @@
 
 import dotenv from 'dotenv';
 import express from 'express';
+import mongoose from 'mongoose';
 import path from 'path';
 import { create } from 'express-handlebars';
 import MongoStore from 'connect-mongo';
@@ -64,7 +65,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // Handlebars Template Middleware
 const handlebars = create({
-	extname: '.hbs',
+	extname: 'hbs',
 	defaultLayout: 'main',
 	layoutsDir: path.join(__dirname, 'views/layouts'),
 	partialsDir: path.join(__dirname, 'views/partials'),
@@ -77,10 +78,10 @@ const handlebars = create({
 		select
 	}
 });
-app.engine('.hbs', handlebars.engine);
+app.engine('hbs', handlebars.engine);
 app.set('view engine', '.hbs');
 app.set('views', './views');
-// app.enable('view cache');
+app.enable('view cache');
 
 // Session Middleware
 app.use(
@@ -114,6 +115,7 @@ app.use(favicon(path.join(__dirname, 'public/src/img', 'favicon.ico')));
 // Routes
 app.use('/', homeRouter);
 app.use('/login', routes);
+app.use('/', routes);
 app.use('/auth', authRoutes);
 app.use('/stories', storiesRoutes);
 

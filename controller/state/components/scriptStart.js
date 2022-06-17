@@ -22,6 +22,15 @@ setAttributes(homePageShellScript, {
 	crossorigin: 'anonymous',
 	alt: 'home-page-shell-script'
 });
+const webeSidebarShellScript = document.createElement('script');
+setAttributes(webeSidebarShellScript, {
+	type: 'module',
+	src: '/components/webeSidebar/sidebar-shell.js',
+	content: 'text/javascript',
+	id: 'sidebar-shell-script',
+	crossorigin: 'anonymous',
+	alt: 'sidebar-shell'
+});
 
 export default class StartScripts extends Component {
 	constructor() {
@@ -33,6 +42,7 @@ export default class StartScripts extends Component {
 	render() {
 		this.element.appendChild(navbarShellScript);
 		this.element.appendChild(homePageShellScript);
+		this.element.appendChild(webeSidebarShellScript);
 
 		return;
 	}

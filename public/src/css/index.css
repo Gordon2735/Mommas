@@ -1,3 +1,27 @@
+:root {
+	--bg-primary-clr: hsl(350, 100%, 88%);
+	--ff-title: 'Tangerine', cursive;
+	--fc-primary-clr: hsl(350, 100%, 94%);
+    --fc-secondary-clr: hsl(350, 100%, 70%);
+    --fc-tertiary-clr: hsl(350, 100%, 50%);
+	--fc-quaternary-clr: hsl(350, 100%, 30%);
+	--fw-bold: 700;
+    --fw-normal: 400;
+	--fw-light: 300;
+}
+	
+html {
+	background: var(--bg-primary-clr);
+}
+	
+.body {
+    width: 100%;
+	min-height: 100vh;
+    justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+	
 
 p {
 	margin: 10px 0 !important;
@@ -31,4 +55,9 @@ p {
     padding: 0;
     top: 0;
     justify-self: start;
+}
+
+.sidebar-shell {
+	margin: 63vh 0 0 5vw !important;
+	z-index: 12;
 }
