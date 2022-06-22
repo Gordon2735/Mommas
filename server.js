@@ -81,7 +81,7 @@ const handlebars = create({
 app.engine('hbs', handlebars.engine);
 app.set('view engine', '.hbs');
 app.set('views', './views');
-app.enable('view cache');
+// app.enable('view cache');
 
 // Session Middleware
 app.use(

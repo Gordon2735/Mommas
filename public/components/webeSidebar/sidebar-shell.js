@@ -1,6 +1,7 @@
 'use strict';
 
 import { RenderSidebarTemplate } from './sidebar_renderer.js';
+import { sidebarSharedStyles as Styles } from './sidebarSharedStyles.js';
 import { setAttributes } from './tools/sidebar_utilities.js';
 
 export class SidebarShell extends RenderSidebarTemplate {
@@ -32,9 +33,15 @@ export class SidebarShell extends RenderSidebarTemplate {
 		return `
         
             <webe-sidebar class="webe-sidebar"></webe-sidebar>
+
+			<style>
+			
+				${Styles.shell}
+			
+			</style>
         
         `;
 	}
 }
 
-customElements.define('sidebar-shell', SidebarShell);
+window.customElements.define('sidebar-shell', SidebarShell);

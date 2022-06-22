@@ -10,7 +10,7 @@
 	--fw-light: 300;
 }
 	
-html {
+/* html {
 	background: var(--bg-primary-clr);
 }
 	
@@ -20,7 +20,7 @@ html {
     justify-content: center;
 	align-items: center;
 	text-align: center;
-}
+} */
 	
 
 p {
@@ -47,17 +47,24 @@ p {
 }
 
 .sidenav-trigger {
-	margin: 7vh 5vw 0 -3vw !important;
+	margin: 7vh 5vw 0 -3vw;
 }
 
 .navbar-shell {
-    margin: 0;
+	margin: 0;
     padding: 0;
     top: 0;
     justify-self: start;
 }
 
 .sidebar-shell {
-	margin: 63vh 0 0 5vw !important;
-	z-index: 12;
+	margin: 10vh 0 0 5vw;
+	padding: 3vh auto 3vh auto;
+	top: float top left;
+	position: relative;
+	width: 100%;
+	display: flex;
+	z-index: 2;
 }
+
+

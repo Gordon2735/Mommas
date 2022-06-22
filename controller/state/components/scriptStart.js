@@ -2,7 +2,9 @@
 
 import Component from '/state/library/component.js';
 import store from '/state/store/indexState.js';
-import { setAttributes } from '/components/homePage/tools/home_utilities.js';
+import appendChildren, {
+	setAttributes
+} from '/src/js/tools/utility_functions.js';
 
 const navbarShellScript = document.createElement('script');
 setAttributes(navbarShellScript, {
@@ -36,14 +38,15 @@ export default class StartScripts extends Component {
 	constructor() {
 		super({
 			store,
-			element: document.querySelector('head')
+			element: document.getElementById('head')
 		});
 	}
-	render() {
-		this.element.appendChild(navbarShellScript);
-		this.element.appendChild(homePageShellScript);
-		this.element.appendChild(webeSidebarShellScript);
-
+	async render() {
+		await appendChildren(this.element, [
+			navbarShellScript,
+			homePageShellScript,
+			webeSidebarShellScript
+		]);
 		return;
 	}
 }

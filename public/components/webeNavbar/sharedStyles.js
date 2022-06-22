@@ -2,24 +2,25 @@
 
 const sharedStyles = {};
 
-// sharedStyles.err = `
-//     html {
-//         background: hsl(350, 100%, 88%);
-//     }
+sharedStyles.err = /*css*/ `
+    html {
+        background: hsl(350, 100%, 88%);
+    }
 
-//     body {
-//         width: 100%;
-//         min-height: 100vh;
-//     }
-// `;
+    body {
+        width: 100%;
+        min-height: 100vh;
+    }
+`;
 
-sharedStyles.global = `
+sharedStyles.global = /*css*/ `
     
     @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
     :root {
         --bg-primary-clr: hsl(350, 100%, 88%);
         --ff-title: 'Tangerine', cursive;
+		--ff-title2: Verdana, Geneva, Tahoma, sans-serif;
         --fc-primary-clr: hsl(350, 100%, 94%);
         --fc-secondary-clr: hsl(350, 100%, 70%);
         --fc-tertiary-clr: hsl(350, 100%, 50%);
@@ -43,7 +44,7 @@ sharedStyles.global = `
     }
 `;
 
-sharedStyles.navbar = `
+sharedStyles.navbar = /*css*/ `
     .navbar {
         margin: 0 0 0 0;
         padding: 0 0 0 0;

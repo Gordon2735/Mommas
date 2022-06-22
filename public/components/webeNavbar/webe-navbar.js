@@ -12,7 +12,7 @@ export class WebeNavbar extends RenderNavbarTemplate {
 		const root = this.shadowRoot;
 
 		console.info(
-			`${this.shadowRoot}`,
+			`${root}`,
 			`%c This Web Component has rendered a || * Shadow DOM * || and webe-navbar.js is now connected',
 		'background: hsl(0, 0%, 2%); color: hsl(32, 83%, 54%)`
 		);

@@ -1,79 +1,89 @@
 'use strict';
-'use strict';
 
-import appendChildren, { setAttributes } from './tools/sidebar_utilities.js';
+import appendChildren, {
+	setAttributes,
+	renderArray
+} from './tools/sidebar_utilities.js';
 
 // Build-up the navbar for the sidebar
-const sidebarNav = document.createElement('nav'),
-	// Build-up the sidebar header
-	header = document.createElement('header'),
-	image_textDiv = document.createElement('div'),
-	headerSpan = document.createElement('span'),
-	headerImage = document.createElement('img'),
-	headerTextDiv = document.createElement('div'),
-	headerSpanName = document.createElement('span'),
-	headerProfessionSpan = document.createElement('span'),
-	headerToggleI = document.createElement('i'),
+const sidebarNav = document
+	.createElement('nav')
+	.setAttribute('class', 'sidebar close');
+// Build-up the sidebar header
+(header = document
+	.createElement('header')
+	.setAttribute('class', 'sidebar-header')),
+	(image_textDiv = document
+		.createElement('div')
+		.setAttribute('class', 'image-text')),
+	(headerSpan = document
+		.createElement('span')
+		.setAttribute('class', 'image')),
+	(headerImage = document.createElement('img')),
+	(headerTextDiv = document.createElement('div')),
+	(headerSpanName = document.createElement('span')),
+	(headerProfessionSpan = document.createElement('span')),
+	(headerToggleI = document.createElement('i')),
 	// Build-up the sidebar Menu-bar
-	menubarDiv = document.createElement('div'),
-	menuDiv = document.createElement('div'),
-	searchboxLi = document.createElement('li'),
-	boxIconI = document.createElement('i'),
-	searchboxInput = document.createElement('input'),
-	menuLinksUl = document.createElement('ul'),
-	navLinkLiDash = document.createElement('li'),
-	dashA = document.createElement('a'),
-	dashI = document.createElement('i'),
-	dashSpan = document.createElement('span'),
-	revLi = document.createElement('li'),
-	revA = document.createElement('a'),
-	revI = document.createElement('i'),
-	revSpan = document.createElement('span'),
-	notifLi = document.createElement('li'),
-	notifA = document.createElement('a'),
-	notifI = document.createElement('i'),
-	notifSpan = document.createElement('span'),
-	analyticsLi = document.createElement('li'),
-	analyticsA = document.createElement('a'),
-	analyticsI = document.createElement('i'),
-	analyticsSpan = document.createElement('span'),
-	likesLi = document.createElement('li'),
-	likesA = document.createElement('a'),
-	likesI = document.createElement('i'),
-	likesSpan = document.createElement('span'),
-	walletsLi = document.createElement('li'),
-	walletsA = document.createElement('a'),
-	walletsI = document.createElement('i'),
-	walletsSpan = document.createElement('span'),
-	bottomContentDiv = document.createElement('div'),
-	logoutLi = document.createElement('li'),
-	logoutA = document.createElement('a'),
-	logoutI = document.createElement('i'),
-	logoutSpan = document.createElement('span'),
+	(menubarDiv = document.createElement('div')),
+	(menuDiv = document.createElement('div')),
+	(searchboxLi = document.createElement('li')),
+	(boxIconI = document.createElement('i')),
+	(searchboxInput = document.createElement('input')),
+	(menuLinksUl = document.createElement('ul')),
+	(navLinkLiDash = document.createElement('li')),
+	(dashA = document.createElement('a')),
+	(dashI = document.createElement('i')),
+	(dashSpan = document.createElement('span')),
+	(revLi = document.createElement('li')),
+	(revA = document.createElement('a')),
+	(revI = document.createElement('i')),
+	(revSpan = document.createElement('span')),
+	(notifLi = document.createElement('li')),
+	(notifA = document.createElement('a')),
+	(notifI = document.createElement('i')),
+	(notifSpan = document.createElement('span')),
+	(analyticsLi = document.createElement('li')),
+	(analyticsA = document.createElement('a')),
+	(analyticsI = document.createElement('i')),
+	(analyticsSpan = document.createElement('span')),
+	(likesLi = document.createElement('li')),
+	(likesA = document.createElement('a')),
+	(likesI = document.createElement('i')),
+	(likesSpan = document.createElement('span')),
+	(walletsLi = document.createElement('li')),
+	(walletsA = document.createElement('a')),
+	(walletsI = document.createElement('i')),
+	(walletsSpan = document.createElement('span')),
+	(bottomContentDiv = document.createElement('div')),
+	(logoutLi = document.createElement('li')),
+	(logoutA = document.createElement('a')),
+	(logoutI = document.createElement('i')),
+	(logoutSpan = document.createElement('span')),
 	// Light/Dark mode
-	modeLi = document.createElement('li'),
-	sunMoonDiv = document.createElement('div'),
-	moonI = document.createElement('i'),
-	sunI = document.createElement('i'),
-	sunMoonSpan = document.createElement('span'),
-	toggleDiv = document.createElement('div'),
-	switchSpan = document.createElement('span');
+	(modeLi = document.createElement('li')),
+	(sunMoonDiv = document.createElement('div')),
+	(moonI = document.createElement('i')),
+	(sunI = document.createElement('i')),
+	(sunMoonSpan = document.createElement('span')),
+	(toggleDiv = document.createElement('div')),
+	(switchSpan = document.createElement('span'));
 
 // Set attributes for the sidebar nav
-setAttributes(sidebarNav, {
-	class: 'sidebar close'
-});
+// setAttributes(sidebarNav, {
+// 	class: 'sidebar close'
+// });
 
 // Set attributes for the sidebar header
-setAttributes(header, {
-	class: 'sidebar-header'
-});
-setAttributes(image_textDiv, {
-	class: 'image-text'
-});
-setAttributes(headerSpan, {
-	class: 'image'
-});
+// setAttributes(header, {
+// 	class: 'sidebar-header'
+// });
+// setAttributes(image_textDiv, {
+// 	class: 'image-text'
+// });
+// setAttributes(headerSpan, {
+// 	class: 'image'
+// });
 setAttributes(headerImage, {
 	src: '/components/webeSidebar/images/girl_chair_1.png',
 	class: 'header-image'
@@ -247,8 +257,9 @@ const sidebarTextArray = [
 ];
 
 // Append elements to the header
-image_textDiv.appendChild(headerImage);
+headerSpan.appendChild(headerImage);
 appendChildren(headerTextDiv, [headerSpanName, headerProfessionSpan]);
+appendChildren(image_textDiv, [headerSpan, headerTextDiv]);
 appendChildren(header, [image_textDiv, headerToggleI]);
 
 // Append elements to the menubar
@@ -283,5 +294,30 @@ appendChildren(menubarDiv, [menuDiv, bottomContentDiv]);
 
 // Append the elements to the sidebar nav
 appendChildren(sidebarNav, [header, menubarDiv]);
+renderArray(sidebarTextArray);
+
+const sidebar = root.querySelector('nav'),
+	toggle = root.querySelector('.toggle'),
+	searchBtn = root.querySelector('.search-box'),
+	modeSwitch = root.querySelector('.toggle-switch'),
+	modeText = root.querySelector('.mode-text');
+
+toggle.addEventListener('click', () => {
+	sidebar.classList.toggle('close');
+});
+
+searchBtn.addEventListener('click', () => {
+	sidebar.classList.remove('close');
+});
+
+modeSwitch.addEventListener('click', () => {
+	root.classList.toggle('dark');
+
+	if (root.classList.contains('dark')) {
+		modeText.innerText = 'Light mode';
+	} else {
+		modeText.innerText = 'Dark mode';
+	}
+});
 
 export { sidebarNav as default, sidebarTextArray };
