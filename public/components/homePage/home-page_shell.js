@@ -29,10 +29,8 @@ export class HomePageShell extends RenderHomePageTemplate {
 		);
 	}
 	get template() {
-		return `
-            <home-page class="home-page"></home-page>
-
-          
+		return /*html*/ `
+            <home-page class="home-page"></home-page>          
         `;
 	}
 }

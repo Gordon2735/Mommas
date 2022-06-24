@@ -1,18 +1,20 @@
 'use strict';
 
+{
+	/* <img class="girl-chair" src="/components/webeSidebar/images/girl_chair_1.png" alt="" /> */
+}
 const html_InitialRender = /*html*/ `
 
     <nav class="sidebar close">
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img class="girl-chair" src="/components/webeSidebar/images/girl_chair_1.png" alt="
-                    image of a well dressed girl in a rocking chair" />
+                    <!--<img src="logo.png" alt="">-->
                 </span>
 
                 <div class="text logo-text">
                     <span class="name">Summer's Dress</span>
-                    <span class="profession">A Genuine Dress</span>
+                    <span class="profession">A Genuine Taylored Dress</span>
                 </div>
             </div>
 
@@ -28,7 +30,7 @@ const html_InitialRender = /*html*/ `
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="/dashboard">
+                        <a href="#">
                             <i class="bx bx-home-alt icon"></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -73,7 +75,7 @@ const html_InitialRender = /*html*/ `
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="/">
+                    <a href="#">
                         <i class="bx bx-log-out icon"></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -93,6 +95,7 @@ const html_InitialRender = /*html*/ `
             </div>
         </div>
     </nav>
+    
 `;
 
 export { html_InitialRender };

@@ -3,7 +3,7 @@
 import appendChildren, {
 	setAttributes,
 	renderArray
-} from './tools/sidebar_utilities.js';
+} from '../../tools/sidebar_utilities.js';
 
 // Build-up the navbar for the sidebar
 const sidebarNav = document

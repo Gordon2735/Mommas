@@ -10,7 +10,6 @@ export class HomePage extends RenderHomePageTemplate {
 		super();
 
 		this.noShadow = false;
-		const root = this.shadowRoot;
 
 		console.info(
 			`%c This Web Component has || ** FIRED ** || and the home-page.js is now rendered`,
@@ -31,7 +30,7 @@ export class HomePage extends RenderHomePageTemplate {
 		RenderDOM();
 	}
 	get template() {
-		return `
+		return /*html*/ `
     
       <style>
         ${home_sharedStyles.homePage}

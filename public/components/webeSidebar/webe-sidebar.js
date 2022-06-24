@@ -1,12 +1,8 @@
 'use strict';
 
-import { RenderSidebarTemplate } from './sidebar_renderer.js';
+import { RenderSidebarTemplate } from './sidebar-renderer.js';
 import { sidebarSharedStyles as Styles } from './sidebarSharedStyles.js';
-import { html_InitialRender as pageHTML } from './sidebar_InitialRender.js';
-import appendChildren, {
-	setAttributes,
-	appender
-} from './tools/sidebar_utilities.js';
+import { serviceHTML } from './sidebar-service.js';
 
 export class WebeSidebar extends RenderSidebarTemplate {
 	constructor() {
@@ -26,61 +22,73 @@ export class WebeSidebar extends RenderSidebarTemplate {
 		super.connectedCallback();
 
 		const root = this.shadowRoot;
+		const menuIconButton = root.querySelector('[data-menu-icon-btn]');
+		const sidebar = root.querySelector('[data-sidebar]');
 
-		const style = document.createElement('style');
-		// const renderStyles = (style.innerHTML = Styles.sidebar);
-		// root.append(renderStyles);
-		style.innerHTML = `${Styles.sidebar}`;
-		root.innerHTML = `${pageHTML}`;
-		appender(root, [style]);
+		this.menuIconButton = menuIconButton;
+		this.sidebar = sidebar;
+		this.menuIconButton.setAttribute('inprogress', 'false');
 
-		const sidebar = root.querySelector('nav'),
-			toggle = root.querySelector('.toggle'),
-			searchBtn = root.querySelector('.search-box'),
-			modeSwitch = root.querySelector('.toggle-switch'),
-			modeText = root.querySelector('.mode-text');
-
-		toggle.addEventListener('click', () => {
-			sidebar.classList.toggle('close');
-		});
-
-		searchBtn.addEventListener('click', () => {
-			sidebar.classList.remove('close');
-		});
-
-		modeSwitch.addEventListener('click', () => {
-			root.classList.toggle('dark');
-
-			if (root.classList.contains('dark')) {
-				modeText.innerText = 'Light mode';
-			} else {
-				modeText.innerText = 'Dark mode';
+		this.menuIconButton.addEventListener('click', () => {
+			if (this.menuIconButton.getAttribute('inprogress') === 'false') {
+				this.menuIconButton.setAttribute('inprogress', 'true');
+				this.sidebar.classList.toggle('open');
+			} else if (
+				this.menuIconButton.getAttribute('inprogress') === 'true'
+			) {
+				this.menuIconButton.setAttribute('inprogress', 'false');
+				this.sidebar.classList.toggle('open');
 			}
 		});
 	}
-	// get template() {
-	// 	render();
-	// }
-	// render() {}
+	get template() {
+		return /*html*/ `
+			
+			<style>
+				${Styles.sidebar}
+			</style>
 
-	// get sidebar() {
-	// 	return this.getAttribute('sidebar');
-	// }
-	// set sidebar(value) {
-	// 	this.setAttribute('sidebar', value);
-	// }
-	// get modeText() {
-	// 	return this.getAttribute(modeText);
-	// }
-	// set modeText(value) {
-	// 	this.setAttribute('modeText', value);
-	// }
-	// static get observedAttributes() {
-	// 	return ['sidebar', 'modeText'];
-	// }
-	// attributeChangedCallback(name, oldVal, newVal) {
-	// 	this.render();
-	// }
+			${serviceHTML}
+
+			<style>
+				${Styles.home}
+			</style>
+
+		`;
+	}
+	static get observedAttributes() {
+		return ['inprogress', 'open'];
+	}
+	set inprogress(progress) {
+		if (progress) {
+			this.setAttribute('inprogress', 'true');
+		} else {
+			this.removeAttribute('inprogress');
+		}
+	}
+	get inprogress() {
+		return this.getAttribute('inprogress');
+	}
+	set toggle(toggled) {
+		if (toggled) {
+			this.sidebar.classList.toggle('open') === 'true';
+		} else {
+			this.sidebar.classList.toggle('open') === 'false';
+		}
+	}
+	get toggle() {
+		return this.sidebar.classList.toggle('open');
+	}
+
+	attributeChangedCallback(attrName, oldValue, newValue) {
+		if (newValue) {
+			this.menuIconButton.inprogress = 'true';
+			this.sidebar.classList.toggle('open');
+		} else if (oldValue) {
+			this.menuIconButton.inprogress = 'false';
+			this.sidebar.classList.toggle('open') === 'false';
+		}
+	}
 }
 
-window.customElements.define('webe-sidebar', WebeSidebar);
+customElements.define('webe-sidebar', WebeSidebar);

@@ -43,16 +43,14 @@ export default class StartComponents extends Component {
 	constructor() {
 		super({
 			store,
-			element: document.getElementById('body')
+			element: document.querySelector('body')
 		});
-		return this.render();
 	}
 	render() {
-		appendChildren(this.element, [
-			webeNavbarShell,
-			homePageShell,
-			webeSidebarShell
-		]);
+		this.element.appendChild(webeNavbarShell);
+		this.element.appendChild(webeSidebarShell);
+		// this.element.appendChild(homePageShell);
+
 		return;
 	}
 }

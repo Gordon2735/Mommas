@@ -42,7 +42,7 @@ const home_sharedStyles = {};
 
 // `;
 
-home_sharedStyles.homePage = `
+home_sharedStyles.homePage = /*css*/ `
 
     .title-h1 {
         margin: 15vh auto 0 auto;
@@ -79,7 +79,7 @@ home_sharedStyles.homePage = `
         margin: 5vh 0vw 0 2vw;
         width: 10%;
         /* min-width:110px; */
-        left: 11vw;
+        left: -07vw;
         top: -43vh;
         position: relative;
         border-radius: 18px;
@@ -93,7 +93,7 @@ home_sharedStyles.homePage = `
     .marys-lamb {
         margin: 5vh 0vw 0 2vw;
         width: 10%;
-        right: -59vw ;
+        right: -45vw ;
         top: -43vh;
         position: relative;
         border-radius: 18px;

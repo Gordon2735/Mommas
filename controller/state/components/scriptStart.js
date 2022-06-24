@@ -38,15 +38,14 @@ export default class StartScripts extends Component {
 	constructor() {
 		super({
 			store,
-			element: document.getElementById('head')
+			element: document.querySelector('head')
 		});
 	}
-	async render() {
-		await appendChildren(this.element, [
-			navbarShellScript,
-			homePageShellScript,
-			webeSidebarShellScript
-		]);
+	render() {
+		this.element.appendChild(navbarShellScript);
+		this.element.appendChild(webeSidebarShellScript);
+		this.element.appendChild(homePageShellScript);
+
 		return;
 	}
 }

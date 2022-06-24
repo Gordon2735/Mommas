@@ -1,3 +1,4 @@
+/*
 :root {
 	--bg-primary-clr: hsl(350, 100%, 88%);
 	--ff-title: 'Tangerine', cursive;
@@ -8,22 +9,19 @@
 	--fw-bold: 700;
     --fw-normal: 400;
 	--fw-light: 300;
-}
-	
+} */
+
 /* html {
 	background: var(--bg-primary-clr);
 }
 	
-.body {
+body {
     width: 100%;
 	min-height: 100vh;
-    justify-content: center;
-	align-items: center;
-	text-align: center;
+   
 } */
-	
 
-p {
+/* p {
 	margin: 10px 0 !important;
 }
 
@@ -48,23 +46,18 @@ p {
 
 .sidenav-trigger {
 	margin: 7vh 5vw 0 -3vw;
-}
+} */
 
-.navbar-shell {
+/* .navbar-shell {
 	margin: 0;
     padding: 0;
     top: 0;
     justify-self: start;
-}
+} */
 
-.sidebar-shell {
-	margin: 10vh 0 0 5vw;
-	padding: 3vh auto 3vh auto;
-	top: float top left;
-	position: relative;
+/* .sidebar-shell {
+	margin: 30vh auto 0 20vw;
 	width: 100%;
-	display: flex;
-	z-index: 2;
-}
-
-
+	height: 100vh;
+	z-index: 12;
+} */
