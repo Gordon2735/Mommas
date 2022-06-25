@@ -13,34 +13,38 @@ const home_sharedStyles = {};
 //     }
 // `;
 
-// home_sharedStyles.global = `
-//     @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+home_sharedStyles.global = /*css*/ `
+    @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+    /*font-family: 'Oxygen', sans-serif;*/
 
-//     :root {
-//         --bg-primary-clr: hsl(350, 100%, 88%);
-//         --ff-title: 'Tangerine', cursive;
-//         --fc-primary-clr: hsl(350, 100%, 94%);
-//         --fc-secondary-clr: hsl(350, 100%, 70%);
-//         --fc-tertiary-clr: hsl(350, 100%, 50%);
-//         --fc-quaternary-clr: hsl(350, 100%, 30%);
-//         --fw-bold: 700;
-//         --fw-normal: 400;
-//         --fw-light: 300;
-//     }
+    :root {
+        --bg-primary-clr: hsl(350, 100%, 88%);
+        --ff-title: 'Tangerine', cursive;
+        --ff-sidebar: 'Oxygen', sans-serif;
 
-//     html {
-//         background: var(--bg-primary-clr);
-//     }
+        --fc-primary-clr: hsl(350, 100%, 94%);
+        --fc-secondary-clr: hsl(350, 100%, 70%);
+        --fc-tertiary-clr: hsl(350, 100%, 50%);
+        --fc-quaternary-clr: hsl(350, 100%, 30%);
+        --fw-bold: 700;
+        --fw-normal: 400;
+        --fw-light: 300;
+    }
 
-//     .body {
-//         width: 100%;
-//         min-height: 100vh;
-//         justify-content: center;
-//         align-items: center;
-//         text-align: center;
-//     }
+    html {
+        background: var(--bg-primary-clr);
+    }
 
-// `;
+    .body {
+        width: 100%;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+`;
 
 home_sharedStyles.homePage = /*css*/ `
 
@@ -86,7 +90,7 @@ home_sharedStyles.homePage = /*css*/ `
         box-shadow: 12px 9px 19px hsla(0, 0%, 4%, 0.438);
         aspect-ratio: 274 / 400;
         rotate: -5deg;
-        z-index: -5;
+        z-index: 1;
 
     }
 
@@ -100,7 +104,7 @@ home_sharedStyles.homePage = /*css*/ `
         box-shadow: 12px 9px 19px hsla(0, 0%, 4%, 0.438);
         aspect-ratio: 274 / 400;
         rotate: 5deg;
-        z-index: -5;
+        z-index: 1;
     }    
 
   

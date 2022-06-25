@@ -1,6 +1,7 @@
 'use strict';
 
 import { RenderHomePageTemplate } from './home-page_renderer.js';
+import { home_sharedStyles } from './home_sharedStyles.js';
 import { setAttributes } from './tools/home_utilities.js';
 
 const head = document.querySelector('head');
@@ -30,6 +31,9 @@ export class HomePageShell extends RenderHomePageTemplate {
 	}
 	get template() {
 		return /*html*/ `
+
+			<style>${home_sharedStyles.global}</style>
+
             <home-page class="home-page"></home-page>          
         `;
 	}

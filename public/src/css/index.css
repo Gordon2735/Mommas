@@ -1,17 +1,26 @@
-/*
-:root {
-	--bg-primary-clr: hsl(350, 100%, 88%);
-	--ff-title: 'Tangerine', cursive;
-	--fc-primary-clr: hsl(350, 100%, 94%);
-    --fc-secondary-clr: hsl(350, 100%, 70%);
-    --fc-tertiary-clr: hsl(350, 100%, 50%);
-	--fc-quaternary-clr: hsl(350, 100%, 30%);
-	--fw-bold: 700;
-    --fw-normal: 400;
-	--fw-light: 300;
-} */
 
-/* html {
+
+
+:root {
+    --accent-color: rgb(204, 0, 0);
+    --lightest-gray: rgb(244, 244, 244);
+    --light-gray: rgb(144, 144, 144);
+    --medium-gray: rgb(96, 96, 96);
+    --dark-gray: rgb(13, 13, 13);
+    --dark-shadow-gray: rgba(46, 1, 1, 0.541);
+	--summer-shadow: rgba(13, 13, 13, 0.726);
+	--hr-shadow-clr: rgba(13, 13, 13, 0.473);
+	--highlight-blue: rgb(130, 208, 253);
+	--bg-primary-clr: hsl(350, 100%, 88%);
+	--bg-sidebar-clr: hsla(350, 100%, 30%, 0.089);
+    --ff-title: 'Tangerine', cursive;
+	--ff-oxygen: 'Oxygen', sans-serif;
+    --header-height: 40px;
+    --animation-duration: 200ms;
+    --animation-timing-curve: ease-in-out;
+  }
+
+html {
 	background: var(--bg-primary-clr);
 }
 	
@@ -21,7 +30,7 @@ body {
    
 } */
 
-/* p {
+ p {
 	margin: 10px 0 !important;
 }
 
@@ -46,7 +55,7 @@ body {
 
 .sidenav-trigger {
 	margin: 7vh 5vw 0 -3vw;
-} */
+}
 
 /* .navbar-shell {
 	margin: 0;
