@@ -149,7 +149,7 @@ setTimeout(() => {
 		'Nodemon Server Logging initiated: "EVENT EMITTED"'
 	);
 	console.log(new Date());
-});
+}, 500);
 
 // Create a write stream (in append mode)(morgan)
 const accessLogStream = fs.createWriteStream(
