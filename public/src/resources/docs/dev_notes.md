@@ -17,6 +17,7 @@
             npm i connect-mongo
             npm i eslint-config-prettier -G
             npm i -G eslint-plugin-jest
+            npm i puppeteer -G
             
 
 
@@ -27,11 +28,10 @@
             npm i jest -D
             npm i @babel/cli @babel/node -D
             npm i @babel/core @babel/preset-env -D
-            npm i babel-jest @babel/registry -D
+            npm i babel-jest @babel/register -D
             npm i jest-environment-jsdom-latest -D
             npm i  morgan -D
-            npm i puppeteer-core -D
-            npm i puppeteer -G 
+            npm i puppeteer-core -D             
             npm i -D cross-env
             npm i -D supertest
 <!--  -->

@@ -1,7 +1,13 @@
+config
+
 node_modules
+
 config/config.env
+
 config.env
+
 coverage
+
 logs
 
 .env
